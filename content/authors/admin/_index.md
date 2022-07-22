@@ -11,10 +11,7 @@ interests:
 - Inequidad educativa
 - Factores asociados a los logros educativos
 - R programming 
-organizations:
-- name: Oficina de la Medición de la Calidad de los Aprendizajes
-  url: http://umc.minedu.gob.pe/
-role: Especialista de Factores Asociados
+
 social:
 - icon: twitter
   icon_pack: fab
