@@ -17,7 +17,17 @@ image:
 projects: []
 ---
 
+## El titulo de una entrada
+
+### El subtitulo de una entrada
+
+Hola, estoy probando blogdown
+
+
 ```{r echo=FALSE}
+
+# Si escribimos un poco, que pasa. 
+
 library(ggplot2)
 
 x = seq(-1, 1, .01)

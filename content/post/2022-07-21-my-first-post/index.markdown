@@ -17,4 +17,11 @@ image:
 projects: []
 ---
 
+## El titulo de una entrada
+
+### El subtitulo de una entrada
+
+Hola, estoy probando blogdown
+
+
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" />
