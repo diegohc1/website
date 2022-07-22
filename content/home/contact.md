@@ -1,7 +1,6 @@
 ---
-active:false
-
 # An instance of the Contact widget.
+active:false
 widget: contact
 
 # This file represents a page section.
