@@ -23,6 +23,6 @@ superuser: true
 title: Diego Hermoza
 ---
 
-Me gusta el fútbol, el Hip Hop y la estadística. Si el mundo es redondo no sé que es ir hacia adelante.   
+Me gusta el fútbol, el Hip Hop y la estadística. 
+Si el mundo es redondo no sé que es ir hacia adelante.   
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
