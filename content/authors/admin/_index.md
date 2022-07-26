@@ -1,5 +1,4 @@
 ---
-title: Diego Hermoza
 education:
   courses:
   - course: Licenciado en Economía 
