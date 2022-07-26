@@ -17,3 +17,72 @@ image:
   preview_only: no
 projects: []
 ---
+
+
+
+```{r results = "asis"}
+
+# establecemos los parametros a estimar
+set.seed(1)
+N <- 100
+b0 <- 2 
+b1 <- 3 
+b2 <- 5
+
+# simulamos datos
+x1 <- runif(N) 
+x2 <- runif(N) 
+u <- rnorm(N) 
+
+# generamos y
+y <- b0 + b1*x1 + b2*x2 + u
+
+m1 <- lm(y ~ x1 + x2) #regresión
+summary(m1)
+
+# definir la matrix X (variables explicativas)
+X <- as.matrix(cbind(1, x1, x2)) #aumentando un vector de unos
+
+#Estimacion de b = ( (X'X)^(-1) )X'y
+
+# solve() --> genera la inversa de la matriz
+# t()  --> genera la transpuesta de la matriz
+# %*%  --> simbolo para multiplicar matrices
+
+b <- solve( t(X) %*% X) %*% t(X) %*% y
+
+# calcular los residuales / errores e = y-Xb
+e <- y - X %*% b
+colSums(e) #practicamente 0
+
+# numero de observaciones (n) y parametros (k)
+n <- nrow(X);    k <- ncol(X)
+
+# calcular la matriz de varianzas y covarianzas cov = ( 1/(n-k) )e'e(X'X)^(-1)
+#  estimar la varianza de los errores: sigma^2 : s
+# s = ( 1/(n-k) )e'e
+s <- 1/(n-k) * as.numeric(t(e)%*%e) #as.numeric para que sea un valor
+
+#  multiplicar por (X'X)^(-1)
+cov <- s*solve( t(X) %*% X)
+
+# desviaciones estandar de los coeficientes. se = raiz de las diagonales de cov
+se <- sqrt(diag(cov))
+
+# estadisticos t
+t <- (b/se)
+
+# p_value del estadistico t
+p_val <- 2*pt(-abs(t), df = n-k-1)
+
+#Tabla de la regresion
+tabla <- round(cbind(b, se, t, p_val), 4)
+
+#con función de R (lm)
+a <- lm(y~x1+x2); summary(a)
+
+texreg::htmlreg(a)
+
+
+```
+
