@@ -18,7 +18,7 @@ image:
 projects: []
 ---
 
-
+El método más común para la estimación del modelo de regresión lineal es el de mínimos cuadrados. En esta entrada muestro como construir el estimador de mínimos cuadrados ordinarios paso a paso en R. En realidad, dados los supuestos del modelo clásico de regresión lineal, es un procedimiento bastante sencillo. La fórmula para estimar los parámetros es: `\(b = {(X^{\prime}X)}^{-1}X^{\prime}y\)`, donde `\(X\)` contiene las `\(n\)` observaciones de las `\(k\)` variables independientes, y `\(y\)` a las `\(n\)` observaciones de la variable dependiente. Pero... ¿de dónde sale está formula?
 
 
 ```r
